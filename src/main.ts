@@ -5,7 +5,7 @@ const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
-face.setAttribute("aria-label", "A neutral face");
+face.setAttribute("aria-label", "A :P face");
 
 const head = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 head.setAttribute("cx", "100");

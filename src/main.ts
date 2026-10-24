@@ -59,7 +59,21 @@ mouth.setAttribute("stroke-width", "4");
 mouth.setAttribute("stroke-linecap", "round");
 face.append(mouth);
 
+for (let i = 0; i < 100; i++) {
+  const angle = (i / 200) * Math.PI * 2;
+  const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  dot.setAttribute("cx", String(100 + 20 * Math.cos(angle)));
+  dot.setAttribute("cy", String(136 + 20 * Math.sin(angle)));
+  dot.setAttribute("r", "1");
+  dot.setAttribute("fill", "#563b67");
+  dot.setAttribute("stroke", "white");
+  dot.setAttribute("stroke-width", "0.25");
+  face.append(dot);
+}
+
 portrait.append(face);
+
+console.log(document.querySelectorAll("#portrait svg circle").length);
 
 spin.addEventListener("click", () => {
   // Restart rather than accumulate simultaneous animations on repeated clicks.

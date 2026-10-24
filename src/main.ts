@@ -1,3 +1,8 @@
+// @deno-types="./asset-url.d.ts"
+import friend1Url from "./assets/friend1.jpg?no-inline";
+import friend2Url from "./assets/friend2.jpg?no-inline";
+//These are both pictures of my dogs that I took on my phone
+
 const portrait = document.querySelector<HTMLDivElement>("#portrait")!;
 const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 
@@ -62,6 +67,27 @@ function buildFace() {
   mouth.setAttribute("stroke-linecap", "round");
   face.append(mouth);
 
+  const friend1Image = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "image",
+  );
+  friend1Image.setAttribute("href", friend1Url);
+  friend1Image.setAttribute("x", "1");
+  friend1Image.setAttribute("y", "65");
+  friend1Image.setAttribute("width", "70");
+  friend1Image.setAttribute("height", "70");
+  face.append(friend1Image);
+
+  const friend2Image = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "image",
+  );
+  friend2Image.setAttribute("href", friend2Url);
+  friend2Image.setAttribute("x", "130");
+  friend2Image.setAttribute("y", "65");
+  friend2Image.setAttribute("width", "70");
+  friend2Image.setAttribute("height", "70");
+  face.append(friend2Image);
   return face;
 }
 
